@@ -49,7 +49,7 @@ val_data = datagen.flow_from_directory(
 )
 
 # ============================
-# 2. Build Model (Transfer Learning)
+# 2. Build Model
 # ============================
 base_model = MobileNetV2(weights="imagenet", include_top=False, input_shape=(img_size, img_size, 3))
 base_model.trainable = False  
@@ -64,7 +64,6 @@ model = Sequential([
 model.compile(optimizer=Adam(learning_rate=0.0001),
               loss="binary_crossentropy",
               metrics=["accuracy"])
-
 model.summary()
 
 # ============================
