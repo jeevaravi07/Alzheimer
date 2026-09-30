@@ -16,7 +16,6 @@ def predict_image():
         title="Select an Image",
         filetypes=[("Image files", "*.jpg *.jpeg *.png")]
     )
-    
     if not file_path:
         return
     
@@ -39,10 +38,7 @@ def predict_image():
     else:
         result_label.config(text=f"Prediction: Normal", fg="green")
 
-
-# ============================
 # Tkinter GUI
-# ============================
 root = tk.Tk()
 root.title("Alzheimer Detection")
 root.geometry("400x400")
@@ -51,11 +47,9 @@ root.geometry("400x400")
 btn = Button(root, text="Select Image", command=predict_image, font=("Arial", 12), bg="lightblue")
 btn.pack(pady=10)
 
-# Image panel
 panel = Label(root)
 panel.pack()
 
-# Prediction result
 result_label = Label(root, text="No image selected", font=("Arial", 12))
 result_label.pack(pady=10)
 
